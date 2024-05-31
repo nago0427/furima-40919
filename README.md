@@ -12,6 +12,7 @@
 | first_name         | string    | null: false               |
 | last_name_kana     | string    | null: false               |
 | first_name_kana    | string    | null: false               |
+| birth_date         | date      | null: false               |
 
 #### Association
 - has_many :items
@@ -43,7 +44,7 @@
 |-------------|-----------|---------------------------------|
 | user        | references| null: false, foreign_key : true |
 | item        | references| null: false, foreign_key : true |
-| Address     |references |null: false, foreign_key : true  |
+
 
 #### Association
 - belongs_to :user
