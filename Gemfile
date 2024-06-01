@@ -86,10 +86,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'faker'
-end
-
-group :development, :test do
   gem 'rubocop', require: false
 end
+
 
 
