@@ -62,6 +62,10 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rubocop', require: false
 end
 
 group :test do
@@ -81,13 +85,6 @@ group :production do
 end
 
 gem 'devise'
-
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'rubocop', require: false
-end
 
 
 
