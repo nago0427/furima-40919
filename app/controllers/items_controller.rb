@@ -12,6 +12,8 @@ class ItemsController < ApplicationController
     @categories = Category.all
     @conditions = Condition.all
     @shipping_fees = ShippingFee.all
+    @prefectures = Prefecture.all
+
 
   end
 
@@ -20,6 +22,10 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
+      @categories = Category.all
+      @conditions = Condition.all
+      @shipping_fees = ShippingFee.all
+      @prefectures = Prefecture.all
       render :new
     end
   end
