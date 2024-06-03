@@ -11,6 +11,8 @@ class ItemsController < ApplicationController
     @item = Item.new
     @categories = Category.all
     @conditions = Condition.all
+    @shipping_fees = ShippingFee.all
+
   end
 
   def create
