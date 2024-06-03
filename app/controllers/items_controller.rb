@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
     @conditions = Condition.all
     @shipping_fees = ShippingFee.all
     @prefectures = Prefecture.all
+    @shipping_days = ShippingDay.all
 
 
   end
@@ -26,6 +27,8 @@ class ItemsController < ApplicationController
       @conditions = Condition.all
       @shipping_fees = ShippingFee.all
       @prefectures = Prefecture.all
+      @shipping_days = ShippingDay.all
+
       render :new
     end
   end
