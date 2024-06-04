@@ -15,7 +15,6 @@ class ItemsController < ApplicationController
     @prefectures = Prefecture.all
     @shipping_days = ShippingDay.all
 
-
   end
 
   def create
@@ -29,12 +28,13 @@ class ItemsController < ApplicationController
       @prefectures = Prefecture.all
       @shipping_days = ShippingDay.all
 
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
+  private
   def item_params
-    params.require(:item).permit(:name, :description, :price, :category_id, :condition_id, :shipping_fee_id, :prefecture_id, :shipping_days_id, :image).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :description, :price, :category_id, :condition_id, :shipping_fee_id, :prefecture_id, :shipping_day_id, :image).merge(user_id: current_user.id)
   end
-  
+
 end
