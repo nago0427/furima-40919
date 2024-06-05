@@ -3,8 +3,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    # 必要に応じてインスタンス変数を設定
-    # @items = Item.all
+    @items = Item.order(created_at: :desc)
   end
 
   def new
