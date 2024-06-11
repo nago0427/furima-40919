@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   root 'items#index'
 
   resources :users, only: [:show,:create,:new,:delete] 
-  resources :items
-  resources :purchases, only: [:index, :create]
+  
+  resources :items do
+    resources :purchases, only: [:index, :create, :new]
+end
 
 end
