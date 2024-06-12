@@ -126,14 +126,14 @@
     <div class="subtitle" >
       新規投稿商品
     </div>
+     <ul class='item-lists'>
 
-
-    <ul class='item-lists'>
 <% if @items.any? %>
      <% @items.each do |item| %>
       <%=render partial:'shared/item', locals: { item: item }  %>
       <% end %>
   <% else %>
+  
       <li class='list'>
         <%= link_to '#' do %>
         <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
