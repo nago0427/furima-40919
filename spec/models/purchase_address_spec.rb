@@ -2,9 +2,10 @@ require 'rails_helper'
 
 RSpec.describe PurchaseAddress, type: :model do
     before do
-      user = FactoryBot.create(:user)
-      item = FactoryBot.create(:item)
-      @purchase_address = FactoryBot.build(:purchase_address, user_id: user.id, item_id: item.id, token: 'tok_abcdefghijk00000000000000000')
+      @user = FactoryBot.create(:user)
+      @item = FactoryBot.create(:item)
+      @purchase_address = FactoryBot.build(:purchase_address, user_id: @user.id, item_id: @item.id, token: 'tok_abcdefghijk00000000000000000')
+      sleep(1)
     end
     
     context '内容に問題がない場合' do
@@ -33,7 +34,7 @@ RSpec.describe PurchaseAddress, type: :model do
       it '都道府県が空では保存できない' do
         @purchase_address.prefecture_id = 1
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@purchase_address.errors.full_messages).to include("Prefecture must be other than 1")
       end
   
       it '市区町村が空では保存できない' do
