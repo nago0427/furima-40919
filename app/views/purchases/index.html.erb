@@ -19,6 +19,8 @@
       </div>
     </div>
     <%# /購入内容の表示 %>
+    
+<%= include_gon %>
 
     <%# 支払額の表示 %>
     <div class='item-payment'>
@@ -33,7 +35,7 @@
 
      <%=render 'shared/error_messages', model: @purchase_address %>
 
-    <%= form_with model: @purchase_address,url:item_purchases_path(@item) , class: 'transaction-form-wrap',local: true do |f| %>
+    <%= form_with model: @purchase_address,id: 'charge-form',url:item_purchases_path(@item) , class: 'transaction-form-wrap',local: true do |f| %>
     <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
@@ -81,7 +83,7 @@
           <label class="form-text">郵便番号</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :ostal_code, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
+        <%= f.text_field :postal_code, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
