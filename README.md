@@ -53,7 +53,7 @@
 
 
 ## Addresses テーブル
-
+#
 | Column        | Type      | Options                        |
 |---------------|-----------|--------------------------------|
 | postal_code   | string    | null: false                    |
